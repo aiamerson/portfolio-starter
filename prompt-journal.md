@@ -31,11 +31,11 @@ For each entry, note:
 ## Phase 2 — Guided Tasks
 
 ### Entry 2 — About section
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Write a short professional bio for a CS student interested in an open source job. Keep it warm and professional. Also add my University as Norfolk State University, my interest as "art, music, technology, and anime/manga", and my hobbies as "painting, going on walks, reading manga, nad playing video games". Also remember to keep the prompt journal updated
+- **Result:** I turned the placeholder About text into a short bio tailored to a CS student aiming for an open source role.
+- **What I changed or did next:** I added a more specific career goal and kept the tone warm, then logged this prompt so the journal stays current.
 
 ---
 
