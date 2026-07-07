@@ -19,12 +19,12 @@ For each entry, note:
 ## Phase 1 — Setup & Orientation
 
 ### Entry 1
-- **Feature/task:** 
-- **Copilot feature used:** 
+- **Feature/task:** Create the prompt journal and record this request
+- **Copilot feature used:** Chat / agent-assisted editing
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Hey copilot! First off I would like you to log the prompts I submit to you, the result tou give, and the reflections, including this one, into "prompt-journal.md".
+- **Result:** I used the existing journal template and filled in the first entry so it can track prompts, results, and reflections from the start.
+- **What I changed or did next:** I kept the structure in place and started the log with this request so future entries can be added in the same format.
 
 ---
 
@@ -97,7 +97,7 @@ For each entry, note:
 
 **1. What feature are you most proud of?**
 
-*(Write a few sentences.)*
+The prompt journal itself, because it turns the Copilot workflow into something I can review and improve instead of treating each prompt like a one-off.
 
 ---
 
