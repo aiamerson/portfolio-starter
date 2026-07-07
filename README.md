@@ -27,11 +27,12 @@ Open the folder in VS Code:
 code .
 ```
 
-### 3. Enable GitHub Pages
+### 3. Enable GitHub Pages and Actions
 
-1. Go to your forked repo on GitHub → **Settings → Pages**
-2. Under **Source**, select **GitHub Actions**
-3. That's it — every push to `main` will auto-deploy your site
+1. Go to the **Actions** tab and press the top, green button to accept the workflow of commits
+2. Go to your forked repo on GitHub → **Settings → Pages**
+3. Under **Source**, select **GitHub Actions**
+4. That's it — every push to `main` will auto-deploy your site
 
 Your site will be live at: `https://YOUR-USERNAME.github.io/portfolio-starter/`
 
