@@ -40,11 +40,11 @@ For each entry, note:
 ---
 
 ### Entry 3 — Projects
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Can you help me change the highlight color of the header at the top of the webpage in to red and have it with a back outline
+- **Result:** I updated the hero highlight text so it shows as red with a black outline.
+- **What I changed or did next:** I changed the `.highlight` CSS rule instead of editing the HTML, which keeps the style reusable and easy to adjust later.
 
 ---
 
