@@ -105,6 +105,13 @@ For each entry, note:
 - **Result:** I moved the moon and sun symbol onto the switch thumb so the icon changes with the theme.
 - **What I changed or did next:** I used the toggle state in CSS to swap the thumb icon instead of keeping the symbols on the track.
 
+### Entry 11
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Improve the responsive styles in this CSS file for screens under 600px. The nav links should stack or hide, the hero text should be smaller, and the projects grid should be single-column.
+- **Result:** I added a 600px breakpoint that stacks the nav links, reduces the hero text size, and turns the projects grid into a single column.
+- **What I changed or did next:** I kept the responsive work scoped to a smaller-screen media query so the tablet layout stays intact.
+
 ---
 
 ## Reflection
