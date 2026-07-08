@@ -16,6 +16,17 @@
   --transition: 0.2s ease;
 }
 
+html[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-bg-alt: #1a1a1a;
+  --color-text: #f3f4f6;
+  --color-text-muted: #c4c4c4;
+  --color-accent: #ef4444;
+  --color-accent-hover: #dc2626;
+  --color-border: #3a3a3a;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
 /* TODO: Add a [data-theme="dark"] block here for dark mode.
    Copilot can generate this for you — try:
    "Add a dark mode theme using CSS custom properties" */
@@ -38,6 +49,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.7;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 a {
@@ -87,6 +99,97 @@ a:hover {
   color: var(--color-accent);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle-track {
+  position: relative;
+  width: 3.25rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  padding: 0.15rem;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.theme-toggle-track::before,
+.theme-toggle-track::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+.theme-toggle-track::before {
+  content: "☾";
+  left: 0.34rem;
+}
+
+.theme-toggle-track::after {
+  content: "☀";
+  right: 0.34rem;
+}
+
+.theme-toggle-thumb {
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: translateX(0);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-track {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-track::before {
+  opacity: 0.55;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-track::after {
+  color: #fff;
+}
+
+.theme-toggle[aria-pressed="false"] .theme-toggle-track::before {
+  color: #fff;
+}
+
+.theme-toggle[aria-pressed="false"] .theme-toggle-track::after {
+  opacity: 0.55;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-thumb {
+  transform: translateX(1.45rem);
+}
+
+.theme-toggle-label {
+  font-size: 0.95rem;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
 /* TODO: The nav isn't responsive on mobile yet.
    Ask Copilot: "Make this navbar collapse into a hamburger menu on small screens" */
 
@@ -115,7 +218,7 @@ a:hover {
 }
 
 .highlight {
-  color: #f79c14;
+  color: #4DCAF6;
   -webkit-text-stroke: 1px #000000;
   text-shadow:
     1px 0 0 #000000,
@@ -126,6 +229,20 @@ a:hover {
     -1px 1px 0 #000000,
     1px -1px 0 #000000,
     -1px -1px 0 #000000;
+}
+
+html[data-theme="dark"] .highlight {
+  color: #b91c1c;
+  -webkit-text-stroke: 1px #ffffff;
+  text-shadow:
+    1px 0 0 #ffffff,
+    -1px 0 0 #ffffff,
+    0 1px 0 #ffffff,
+    0 -1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px -1px 0 #ffffff;
 }
 
 .hero-subtitle {
@@ -227,6 +344,20 @@ h2::after {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.avatar-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #000000;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background: var(--color-bg-alt);
+}
+
+html[data-theme="dark"] .avatar-image {
+  border-color: #ffffff;
 }
 
 /* ============================================================
@@ -342,6 +473,20 @@ footer {
    Ask Copilot: "Improve the responsive styles for screens under 600px"
    ============================================================ */
 @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
   }
@@ -349,5 +494,19 @@ footer {
   .avatar-placeholder {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .theme-toggle-label {
+    font-size: 0.9rem;
   }
 }

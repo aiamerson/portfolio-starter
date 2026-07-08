@@ -49,20 +49,20 @@ For each entry, note:
 ---
 
 ### Entry 4 — Dark mode
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Add the changes so I can see how your way looks please
+- **Result:** I swapped the avatar placeholder for an actual image slot and styled it like a framed profile photo.
+- **What I changed or did next:** I updated the About section markup and added a reusable `.avatar-image` style so the photo will display cleanly once the file is in the project.
 
 ---
 
 ### Entry 5 — Responsive layout
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Can you add a dark mode toggle button that looks like a switch here?
+- **Result:** I added a switch-style dark mode toggle in the navigation bar and connected it to theme settings.
+- **What I changed or did next:** I updated the HTML, CSS, and JavaScript together so the toggle works and remembers the selected mode.
 
 ---
 
@@ -71,25 +71,25 @@ For each entry, note:
 **Feature I chose:** 
 
 ### Entry 6
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Can you add the sun and moon on the switch, and make the blue accent color red when dark mode is on, but keep it blue when dark mode is off?
+- **Result:** I added sun and moon symbols to the toggle and changed the dark-mode accent color to red while leaving light mode blue.
+- **What I changed or did next:** I updated the switch styling in CSS so the icons and theme colors change visually without needing more HTML.
 
 ### Entry 7
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+  > Can you also change the highlight to a deeper red when in dark mode?
+- **Result:** I added a dark-mode-only highlight override so the hero text becomes a deeper red while light mode stays the same.
+- **What I changed or did next:** I kept the highlight style global and layered the darker red on top only when the dark theme is active.
 
 ### Entry 8 — A prompt that didn't work well
-- **Copilot feature used:** 
+- **Copilot feature used:** Chat
 - **What I asked:**
-  > 
+  > Could you make the outline of .avatar-image white in dark mode, and can you make the darker parts of the dark mode less blue-tinted?
 - **What went wrong:** 
-- **How I fixed it (revised prompt or manual edit):** 
+- **How I fixed it (revised prompt or manual edit):** I adjusted the dark theme palette toward neutral charcoal tones and added a dark-mode-only white border for the avatar image.
 
 ---
 
