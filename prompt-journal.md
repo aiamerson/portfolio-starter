@@ -91,6 +91,20 @@ For each entry, note:
 - **What went wrong:** 
 - **How I fixed it (revised prompt or manual edit):** I replaced the text buttons with icon-only circular links, centered the section, and let the icons inherit the theme accent color so they switch with light and dark mode.
 
+### Entry 9
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > can you move the text next to the dark mode switch fom the right of the button, to the left of the button so that the button doesn't move when you switch mades?
+- **Result:** I moved the text label to the left side of the switch and fixed its width so the toggle stays in place.
+- **What I changed or did next:** I reordered the toggle markup and gave the label a fixed width instead of letting the text length change the button size.
+
+### Entry 10
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > can yiu move the sun and moon symbol onto the circle of the switch and it just switched with the mode?
+- **Result:** I moved the moon and sun symbol onto the switch thumb so the icon changes with the theme.
+- **What I changed or did next:** I used the toggle state in CSS to swap the thumb icon instead of keeping the symbols on the track.
+
 ---
 
 ## Reflection
