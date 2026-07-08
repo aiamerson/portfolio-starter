@@ -87,9 +87,9 @@ For each entry, note:
 ### Entry 8 — A prompt that didn't work well
 - **Copilot feature used:** Chat
 - **What I asked:**
-  > Could you make the outline of .avatar-image white in dark mode, and can you make the darker parts of the dark mode less blue-tinted?
+  > Can you center all the text and the buttons in the get in touch section. Also remove the text from the buttons and replace them with a graphic of an envelope for email, and the logos for github and linkedin for their respective buttons? Also can you make sure that they stay on color theme and switch color with the light and dark mode? While you're at it can you make the buttons circular instead of rectangular?
 - **What went wrong:** 
-- **How I fixed it (revised prompt or manual edit):** I adjusted the dark theme palette toward neutral charcoal tones and added a dark-mode-only white border for the avatar image.
+- **How I fixed it (revised prompt or manual edit):** I replaced the text buttons with icon-only circular links, centered the section, and let the icons inherit the theme accent color so they switch with light and dark mode.
 
 ---
 
