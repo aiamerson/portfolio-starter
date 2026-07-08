@@ -144,7 +144,7 @@ a:hover {
   line-height: 1;
   color: var(--color-text-muted);
   transition: color var(--transition), opacity var(--transition);
-  content: "☾";
+  content: "☀";
 }
 
 .theme-toggle[aria-pressed="true"] .theme-toggle-track {
@@ -153,7 +153,7 @@ a:hover {
 }
 
 .theme-toggle[aria-pressed="true"] .theme-toggle-thumb::before {
-  content: "☀";
+  content: "☾";
   color: #8e8e8e;
 }
 
