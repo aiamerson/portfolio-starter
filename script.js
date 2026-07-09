@@ -6,25 +6,14 @@
 // ============================================================
 const projects = [
   {
-    title: "Project One",
-    description: "A short description of what this project does and why you built it.",
-    tags: ["Python", "Flask"],
-    github: "https://github.com/yourusername/project-one",
-    demo: null,
+    title: "The Guardian",
+    description: "An AI weapon detection project that identifies guns and knives in photos and draws bounding boxes around each detected item.",
+    tags: ["AI Detection", "Computer Vision", "Security"],
   },
   {
-    title: "Project Two",
-    description: "Another project you're proud of. What problem did it solve?",
-    tags: ["JavaScript", "React"],
-    github: "https://github.com/yourusername/project-two",
-    demo: "https://yourproject.netlify.app",
-  },
-  {
-    title: "Project Three",
-    description: "Keep it brief — one or two sentences is plenty.",
-    tags: ["Java", "Algorithms"],
-    github: "https://github.com/yourusername/project-three",
-    demo: null,
+    title: "Spartan AUX",
+    description: "A virtual music party where guests join a host, vote on songs from a chosen genre, and keep the next vote ready so the music keeps playing without a gap.",
+    tags: ["Voting", "Music Party", "Real-time"],
   },
 ];
 
@@ -34,10 +23,15 @@ const projects = [
 // Ask Copilot to help format this list based on your resume.
 // ============================================================
 const skills = [
-  "Python", "JavaScript", "Java", "C",
-  "HTML & CSS", "Git & GitHub",
-  "React", "Node.js",
-  "SQL", "Linux",
+  { name: "Python", rating: 5 },
+  { name: "C++", rating: 5 },
+  { name: "JavaScript", rating: 4 },
+  { name: "Java", rating: 4 },
+  { name: "Git & GitHub", rating: 4 },
+  { name: "SQL", rating: 4 },
+  { name: "HTML & CSS", rating: 3 },
+  { name: "Node.js", rating: 3 },
+  { name: "Linux", rating: 3 },
 ];
 
 // ============================================================
@@ -71,11 +65,63 @@ function renderProjects() {
 // ============================================================
 function renderSkills() {
   const container = document.getElementById("skills-container");
+  const ratingPanel = document.getElementById("skills-rating");
   if (!container) return;
 
-  container.innerHTML = skills
-    .map((skill) => `<span class="skill-badge">${skill}</span>`)
+  const sortedSkills = [...skills].sort((firstSkill, secondSkill) => {
+    if (secondSkill.rating !== firstSkill.rating) {
+      return secondSkill.rating - firstSkill.rating;
+    }
+
+    return firstSkill.name.localeCompare(secondSkill.name);
+  });
+
+  container.innerHTML = sortedSkills
+    .map(
+      (skill) => `
+        <button class="skill-badge" type="button" data-skill-name="${skill.name}" data-skill-rating="${skill.rating}" aria-label="${skill.name} skill rating ${skill.rating} out of 5 stars">
+          ${skill.name}
+        </button>
+      `
+    )
     .join("");
+
+  if (!ratingPanel) return;
+
+  const ratingName = ratingPanel.querySelector(".skills-rating-name");
+  const ratingStars = ratingPanel.querySelector(".skills-rating-stars");
+
+  const resetRating = () => {
+    if (ratingName) {
+      ratingName.textContent = "Hover a skill";
+    }
+
+    if (ratingStars) {
+      ratingStars.textContent = "☆☆☆☆☆";
+    }
+  };
+
+  sortedSkills.forEach((skill, index) => {
+    const skillButton = container.querySelectorAll(".skill-badge")[index];
+    if (!skillButton) return;
+
+    const showRating = () => {
+      if (ratingName) {
+        ratingName.textContent = skill.name;
+      }
+
+      if (ratingStars) {
+        ratingStars.textContent = "★★★★★".slice(0, skill.rating) + "☆☆☆☆☆".slice(skill.rating);
+      }
+    };
+
+    skillButton.addEventListener("mouseenter", showRating);
+    skillButton.addEventListener("focus", showRating);
+    skillButton.addEventListener("mouseleave", resetRating);
+    skillButton.addEventListener("blur", resetRating);
+  });
+
+  resetRating();
 }
 
 // ============================================================

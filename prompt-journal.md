@@ -133,6 +133,34 @@ For each entry, note:
 - **Result:** I added a black outline for the Portfolio word in dark mode.
 - **What I changed or did next:** I replaced the dark-mode reset with a dedicated black stroke and shadow outline so the word remains readable in both themes.
 
+### Entry 15
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Would you be able to add my project experience? One is called "The Guardian" that is an AI weapon detection that can detect guns and knives and put a box around each in the photo. Another one is called "Spartan AUX" and it is a virtual music party, where people join a host and they can vote on a song in a genere the host picks. in the middle of the song another vote starts so that it can immediately play after the first is up. I don't have the links to any of them so you can remove the placeholders?
+- **Result:** I replaced the placeholder project cards with your real project experience and removed the fake links.
+- **What I changed or did next:** I updated the project data in the JavaScript file so the rendered cards now match your actual projects without showing placeholder URLs.
+
+### Entry 16
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > I removed the third project chart could you center the remaining two?
+- **Result:** I centered the two remaining project cards in the grid.
+- **What I changed or did next:** I changed the projects array to only include your two real projects and updated the grid columns so they sit centered side by side on larger screens.
+
+### Entry 17
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Can you add lines between sections where the background changes, red in dark made and blue in light mode?
+- **Result:** I added theme-colored divider lines between the sections and footer.
+- **What I changed or did next:** I used the accent color variable so the separators automatically stay blue in light mode and red in dark mode.
+
+### Entry 18
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > For my skills, can you change C to C++, delete react, and when you hover over each skill, show a 5 star rating that shows up to the right of the line under the Skills header. Give C++ and Python 5 stars, put 4 stars for both javas and git and sql, and 3 stars for the rest of the skills. can you also sort them by descending star rating from left to right?
+- **Result:** I replaced C with C++, removed React, sorted the skills by rating, and added a hover-driven star display beside the Skills heading.
+- **What I changed or did next:** I turned the skills list into rated objects, sorted them before rendering, and wired hover and focus states to update the rating panel.
+
 ---
 
 ## Reflection
