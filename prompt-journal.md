@@ -182,6 +182,34 @@ For each entry, note:
 - **Result:** I centered the hero subtitle while keeping it on one line and preserving the outline styling.
 - **What I changed or did next:** I set the subtitle to full width with centered text so it stays aligned in the middle of the hero area.
 
+### Entry 22
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > For a special feature, could you add a pencil icon next to the dark mode that allows the user to draw on the page, with color sliders once drawing mode is activated, and the drawings moving on the page as you scroll. you can turn the mode off by clicking the pencil again. The drawings wouls be user side and doesn't affect other users viewings.
+- **Result:** I added a local-only drawing mode with a pencil toggle, RGB sliders, and a full-page canvas that scrolls with the page.
+- **What I changed or did next:** I wired the drawing feature into the existing navbar and saved strokes in the browser so the sketches stay user-side only.
+
+### Entry 23
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > can you add a box where it shows the current hexacolor and allow the user to type in a hexacolor use? Can you also add an eraser toggle for the cursor, and if you double tap the button it deletes all drawings on the page? Can you also only show the sliders and added features when draw mode is activated?
+- **Result:** I added a typed hex color field, an eraser toggle, and double-click clear behavior while keeping the toolbar hidden until draw mode is enabled.
+- **What I changed or did next:** I extended the drawing toolbar with the new controls and switched the canvas to support erasing and clearing without affecting other users.
+
+### Entry 24
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > The toolbar is still always visible, so could you put the components under an element called "drawing-toolbar" that's opacity it turned on when draw mode is active? also could you switch the full screen to a double tap on the eraser icon instead of the pencil. Could you also replace the text with an eraser image?
+- **Result:** I made the toolbar fade in only while draw mode is active, swapped the eraser label for an icon, and moved clear-all to the eraser double-tap.
+- **What I changed or did next:** I tied the toolbar visibility to draw mode state and updated the eraser button behavior so the pencil only toggles drawing mode.
+
+### Entry 25
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Are you able to add a slight glow to the cursor when you are in draw mode? Have the glow be the same color as the selected drawing color.
+- **Result:** I added a subtle cursor glow that follows the pointer in draw mode and matches the selected drawing color.
+- **What I changed or did next:** I created a floating glow element and updated it whenever the selected color changes so the cursor effect stays in sync with the tool settings.
+
 ---
 
 ## Reflection

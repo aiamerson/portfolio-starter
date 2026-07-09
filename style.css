@@ -50,6 +50,7 @@ body {
   color: var(--color-text);
   line-height: 1.7;
   transition: background-color var(--transition), color var(--transition);
+  position: relative;
 }
 
 a {
@@ -180,6 +181,225 @@ a:hover {
   outline: 3px solid var(--color-accent);
   outline-offset: 4px;
   border-radius: 999px;
+}
+
+.draw-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-accent);
+  font: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.draw-toggle:hover,
+.draw-toggle:focus-visible {
+  transform: translateY(-1px);
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.draw-toggle[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.draw-toggle-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.drawing-toolbar {
+  position: fixed;
+  top: 4.6rem;
+  right: 1rem;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-bg);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+body.drawing-active .drawing-toolbar {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.drawing-hex-field {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 8.2rem;
+}
+
+.drawing-hex-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.drawing-hex-field input {
+  width: 5.8rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.drawing-hex-field input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.drawing-eraser-toggle {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.drawing-eraser-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: currentColor;
+}
+
+.drawing-eraser-toggle:hover,
+.drawing-eraser-toggle:focus-visible {
+  transform: translateY(-1px);
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.drawing-eraser-toggle[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.drawing-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 6rem;
+}
+
+.drawing-slider label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  width: 1rem;
+}
+
+.drawing-slider input[type="range"] {
+  width: 5rem;
+  accent-color: var(--color-accent);
+}
+
+.drawing-preview {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.drawing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  pointer-events: none;
+  touch-action: none;
+}
+
+body.drawing-active .drawing-canvas {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+body.drawing-active .nav-links,
+body.drawing-active .theme-toggle {
+  position: relative;
+  z-index: 120;
+}
+
+body.drawing-active .draw-toggle {
+  position: relative;
+  z-index: 120;
+}
+
+body.drawing-active .drawing-canvas {
+  cursor: crosshair;
+}
+
+body.drawing-active .drawing-canvas[data-draw-color] {
+  cursor: none;
+}
+
+.draw-cursor-glow {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 115;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.45) inset,
+    0 0 10px 4px var(--draw-cursor-color, rgba(79, 70, 229, 0.65)),
+    0 0 20px 8px var(--draw-cursor-color, rgba(79, 70, 229, 0.32));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 35%, rgba(255, 255, 255, 0) 70%);
+  transition: opacity var(--transition), box-shadow var(--transition);
+}
+
+body.drawing-active .draw-cursor-glow {
+  opacity: 1;
+}
+
+body.drawing-erase-mode .draw-cursor-glow {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.45) inset,
+    0 0 10px 4px rgba(150, 150, 150, 0.65),
+    0 0 20px 8px rgba(150, 150, 150, 0.32);
+}
+
+body.drawing-active.drawing-erase-mode .drawing-canvas {
+  cursor: cell;
 }
 
 /* TODO: The nav isn't responsive on mobile yet.
@@ -732,5 +952,16 @@ footer {
   .skills-rating {
     width: 100%;
     justify-content: space-between;
+  }
+
+  .drawing-toolbar {
+    left: 1rem;
+    right: 1rem;
+    justify-content: center;
+  }
+
+  .drawing-hex-field {
+    width: 100%;
+    justify-content: center;
   }
 }

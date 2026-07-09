@@ -24,7 +24,37 @@
           <span class="theme-toggle-thumb" aria-hidden="true"></span>
         </span>
       </button>
+      <button class="draw-toggle" id="draw-toggle" type="button" aria-pressed="false" aria-label="Toggle drawing mode">
+        <span class="draw-toggle-icon" aria-hidden="true">✎</span>
+      </button>
     </nav>
+
+    <div class="drawing-toolbar" id="drawing-toolbar" aria-hidden="true">
+      <div class="drawing-slider">
+        <label for="draw-red">R</label>
+        <input id="draw-red" type="range" min="0" max="255" value="79" />
+      </div>
+      <div class="drawing-slider">
+        <label for="draw-green">G</label>
+        <input id="draw-green" type="range" min="0" max="255" value="70" />
+      </div>
+      <div class="drawing-slider">
+        <label for="draw-blue">B</label>
+        <input id="draw-blue" type="range" min="0" max="255" value="229" />
+      </div>
+      <div class="drawing-hex-field">
+        <label for="draw-hex">Hex</label>
+        <input id="draw-hex" type="text" inputmode="text" maxlength="7" value="#4F46E5" aria-label="Current drawing color hex value" />
+      </div>
+      <button class="drawing-eraser-toggle" id="drawing-eraser-toggle" type="button" aria-pressed="false" aria-label="Toggle eraser mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M15.73 3.29a1 1 0 0 0-1.41 0L6.18 11.44a2 2 0 0 0 0 2.83l4.12 4.12a2 2 0 0 0 2.83 0l8.14-8.14a1 1 0 0 0 0-1.41l-5.54-5.55ZM4 20a1 1 0 0 0 1 1h13a1 1 0 1 0 0-2H5a1 1 0 0 0-1 1Z" />
+        </svg>
+      </button>
+      <div class="drawing-preview" id="drawing-preview" aria-hidden="true"></div>
+    </div>
+
+    <canvas id="drawing-canvas" class="drawing-canvas" aria-hidden="true"></canvas>
 
     <!-- ============================================================
          HERO
