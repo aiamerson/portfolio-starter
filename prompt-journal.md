@@ -112,6 +112,27 @@ For each entry, note:
 - **Result:** I added a 600px breakpoint that stacks the nav links, reduces the hero text size, and turns the projects grid into a single column.
 - **What I changed or did next:** I kept the responsive work scoped to a smaller-screen media query so the tablet layout stays intact.
 
+### Entry 12
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > I added a luffy_animation gif to my images folder, would you be able to add this as my hero image? Also if you can, could you have the original gif for dark made, and for the light mode you inver its colors?
+- **Result:** I set the GIF as the hero background and made it invert in light mode while staying original in dark mode.
+- **What I changed or did next:** I added layered hero pseudo-elements for the animated image and contrast overlay so the text remains readable.
+
+### Entry 13
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > The "portfolio" text in light mode blends in with the background, so could you add a white outline to the word?
+- **Result:** I added a white outline specifically to the Portfolio word in the hero title for light mode.
+- **What I changed or did next:** I wrapped the word in a dedicated span so the outline can be controlled independently without affecting the highlighted name text.
+
+### Entry 14
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Can you also make a black outline for portfolio in dark mode?
+- **Result:** I added a black outline for the Portfolio word in dark mode.
+- **What I changed or did next:** I replaced the dark-mode reset with a dedicated black stroke and shadow outline so the word remains readable in both themes.
+
 ---
 
 ## Reflection

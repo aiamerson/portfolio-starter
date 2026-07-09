@@ -189,16 +189,44 @@ a:hover {
    HERO
    ============================================================ */
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/luffy_animation.gif") center / cover no-repeat;
+  filter: invert(1);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+html[data-theme="dark"] .hero::before {
+  filter: none;
+}
+
+html[data-theme="light"] .hero::after {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 700px;
 }
 
@@ -207,6 +235,32 @@ a:hover {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
+}
+
+.hero-title-word {
+  -webkit-text-stroke: 1px #ffffff;
+  text-shadow:
+    1px 0 0 #ffffff,
+    -1px 0 0 #ffffff,
+    0 1px 0 #ffffff,
+    0 -1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px -1px 0 #ffffff;
+}
+
+html[data-theme="dark"] .hero-title-word {
+  -webkit-text-stroke: 1px #000000;
+  text-shadow:
+    1px 0 0 #000000,
+    -1px 0 0 #000000,
+    0 1px 0 #000000,
+    0 -1px 0 #000000,
+    1px 1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px -1px 0 #000000;
 }
 
 .highlight {
