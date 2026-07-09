@@ -161,6 +161,27 @@ For each entry, note:
 - **Result:** I replaced C with C++, removed React, sorted the skills by rating, and added a hover-driven star display beside the Skills heading.
 - **What I changed or did next:** I turned the skills list into rated objects, sorted them before rendering, and wired hover and focus states to update the rating panel.
 
+### Entry 19
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Can you write up a few sentences to add to the "I am currently looking for programming job opportunities" paragraph explaining how I am modivated to work with programming, and that I am quick to learn, thorough.
+- **Result:** I expanded the paragraph to explain your motivation for programming and highlight that you learn quickly and work thoroughly.
+- **What I changed or did next:** I kept the tone professional and added the new sentences directly into the About section so it reads smoothly with the rest of the bio.
+
+### Entry 20
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > I changed my hero subtitle. Could you make it all on one line and make the font a bit thicker, with the same color and outline as "portfolio" in both modes?
+- **Result:** I made the hero subtitle stay on one line, increased its weight, and matched its outline styling to the Portfolio word across both themes.
+- **What I changed or did next:** I added a dedicated subtitle class so the line stays unwrapped and shares the same light/dark outline treatment as the hero title.
+
+### Entry 21
+- **Copilot feature used:** Chat
+- **Prompt:**
+  > Thank you but also please center the hero subtitle as well?
+- **Result:** I centered the hero subtitle while keeping it on one line and preserving the outline styling.
+- **What I changed or did next:** I set the subtitle to full width with centered text so it stays aligned in the middle of the hero area.
+
 ---
 
 ## Reflection

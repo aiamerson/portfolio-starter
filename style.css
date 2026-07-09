@@ -227,7 +227,7 @@ html[data-theme="light"] .hero::after {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 1000px;
 }
 
 .hero h1 {
@@ -295,6 +295,44 @@ html[data-theme="dark"] .highlight {
   font-size: 1.25rem;
   color: var(--color-text-muted);
   margin-bottom: 2rem;
+}
+
+.hero-subtitle-line {
+  white-space: nowrap;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke: 1px #ffffff;
+  text-shadow:
+    1px 0 0 #ffffff,
+    -1px 0 0 #ffffff,
+    0 1px 0 #ffffff,
+    0 -1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px -1px 0 #ffffff;
+}
+
+html[data-theme="dark"] .hero-subtitle-line {
+  -webkit-text-stroke: 1px #000000;
+  text-shadow:
+    1px 0 0 #000000,
+    -1px 0 0 #000000,
+    0 1px 0 #000000,
+    0 -1px 0 #000000,
+    1px 1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+}
+
+@media (max-width: 600px) {
+  .hero-subtitle-line {
+    font-size: clamp(0.8rem, 3.5vw, 1.05rem);
+  }
 }
 
 /* ============================================================
