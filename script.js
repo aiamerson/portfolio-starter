@@ -150,6 +150,8 @@ function applyTheme(theme) {
       toggleLabel.textContent = isDark ? "Dark mode on" : "Dark mode";
     }
   }
+
+  updateDrawCursorGlow();
 }
 
 function toggleDarkMode() {
@@ -208,6 +210,14 @@ function colorToCss(color) {
   return `rgb(${color.red}, ${color.green}, ${color.blue})`;
 }
 
+function blendColors(color, target, amount) {
+  return {
+    red: Math.round(color.red + (target.red - color.red) * amount),
+    green: Math.round(color.green + (target.green - color.green) * amount),
+    blue: Math.round(color.blue + (target.blue - color.blue) * amount),
+  };
+}
+
 function rgbToHex(color) {
   return `#${[color.red, color.green, color.blue]
     .map((value) => value.toString(16).padStart(2, "0"))
@@ -246,7 +256,16 @@ function updateDrawCursorGlow() {
   if (!drawCursorGlow) return;
 
   const currentColor = getCurrentDrawColor();
-  drawCursorGlow.style.setProperty("--draw-cursor-color", colorToCss(currentColor));
+  const theme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const cursorColor = theme === "light" ? blendColors(currentColor, { red: 0, green: 0, blue: 0 }, 0.35) : currentColor;
+  const ringColor = theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.45)";
+  const coreColor = theme === "light" ? "rgba(0, 0, 0, 0.72)" : "rgba(255, 255, 255, 0.7)";
+  const coreSoftColor = theme === "light" ? "rgba(0, 0, 0, 0.18)" : "rgba(255, 255, 255, 0.1)";
+
+  drawCursorGlow.style.setProperty("--draw-cursor-color", colorToCss(cursorColor));
+  drawCursorGlow.style.setProperty("--draw-cursor-ring-color", ringColor);
+  drawCursorGlow.style.setProperty("--draw-cursor-core-color", coreColor);
+  drawCursorGlow.style.setProperty("--draw-cursor-core-soft-color", coreSoftColor);
 }
 
 function syncDrawingSlidersToTheme() {
